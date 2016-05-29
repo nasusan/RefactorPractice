@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Mtc.h"
+#include "TaskController.h"
 
 /**
  * Callback, called when the set.
@@ -10,13 +10,13 @@
  * @param [in,out]	pfunc	If non-null, the pfunc.
  */
 
-void Mtc::setCallback(void(*pfunc)(void))
+void TaskController::setCallback(void(*pfunc)(void))
 {
-	_MtcCoRoutine = pfunc;
+	_coRoutine = pfunc;
 }
 
 /**
- *	Mtcの本体
+ *	TaskControllerの本体
  *	登録されているコルーチンを順に実行する
  *
  *	ここをStrategyかTemplateMethodで置き換えてないのが深い闇の元
@@ -25,19 +25,19 @@ void Mtc::setCallback(void(*pfunc)(void))
  * @date	2016/05/29
  */
 
-void Mtc::run()
+void TaskController::run()
 {
-	if (_MtcCoRoutine == nullptr)
+	if (_coRoutine == nullptr)
 	{
-		std::cout << "Mtc::run()" << std::endl;
+		std::cout << "TaskController::run()" << std::endl;
 		std::cout << "					no coroutines." << std::endl;
 		return;
 	}
 
-	_MtcCoRoutine();
+	_coRoutine();
 }
 
-void Mtc::wait()
+void TaskController::wait()
 {
 
 }

@@ -2,15 +2,15 @@
 //
 
 #include "stdafx.h"
-#include "Mtc.h"
+#include "TaskController.h"
 #include "SceneManager.h"
 
 int main()
 {
-	Mtc mtc;
+	TaskController taskController;
 		
-	mtc.setCallback(SceneManager::SceneFeiber);
-	mtc.run();
+	taskController.setCallback(SceneManager::SceneFeiber);
+	taskController.run();
 
 	return 0;
 }

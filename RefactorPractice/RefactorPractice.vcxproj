@@ -151,13 +151,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mtc.h" />
+    <ClInclude Include="TaskController.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Mtc.cpp" />
+    <ClCompile Include="TaskController.cpp" />
     <ClCompile Include="RefactorPractice.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="stdafx.cpp">
