@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef ___MTC_H_INCLUDED___
+#define ___MTC_H_INCLUDED___
 
 class Mtc
 {
@@ -10,7 +12,7 @@ public:
 
 private:
 	void(*_MtcCoRoutine)() = nullptr;
-
 };
 
 
+#endif

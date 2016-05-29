@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef ___SCENE_MANAGER_H_INCLUDED___
+#define ___SCENE_MANAGER_H_INCLUDED___
+
 class SceneManager
 {
 public:
@@ -12,16 +16,19 @@ private:
 
 	///	privateメソッド
 
-	void PrintCounter();
-	void ResetCounter();
-	void ProcessCounter();
+	static void PrintCounter();
+	static void ResetCounter();
+	static void ProcessCounter();
 
 private:
 
 	///<	private メンバ
 
-	int _count = 0;
+	static int _count;
 
 };
 
 
+
+
+#endif

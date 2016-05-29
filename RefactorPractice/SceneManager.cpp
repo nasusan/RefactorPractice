@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "SceneManager.h"
-#include "Mtc.h"
 
+
+int SceneManager::_count = 0;
 
 /**
  * Default constructor.
@@ -12,6 +13,7 @@
 
 SceneManager::SceneManager()
 {
+//	std::cout << "未初期化の_count は、" << _count << "です。" << std::endl;
 }
 
 /**
@@ -34,11 +36,11 @@ SceneManager::~SceneManager()
 
 void SceneManager::PrintCounter()
 {
-	std::cout << "hoge" << std::endl;
+	std::cout << _count << std::endl;
 }
 
 /**
- * Resets the counter. 
+ * Resets the counter.
  *
  * @author	Code Geass
  * @date	2016/05/29
@@ -71,6 +73,7 @@ void SceneManager::ProcessCounter()
 
 /**
  * Scene feiber.
+ * ここをFeiberで回す
  *
  * @author	Code Geass
  * @date	2016/05/29
@@ -80,10 +83,16 @@ void SceneManager::SceneFeiber(void)
 {
 	std::cout << "SceneFeiber is running....." << std::endl;
 
-	
-	//while (true)
-	//{
-	//	//ここをFeiberで回す
-	//	// Mtc::wait(1)	
-	//}
+	SceneManager::PrintCounter();
+
+	while (true)
+	{
+		// SceneFeiber()をstaticにすると、
+		// その中では、クラスの実態がないため、メンバ関数が呼べなくなる
+		// (当然全部staticにすれば呼べる)
+		// 
+		SceneManager::ProcessCounter();
+		SceneManager::PrintCounter();
+		// Mtc::wait(1)	
+	}
 }

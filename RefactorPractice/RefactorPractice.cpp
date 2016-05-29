@@ -8,7 +8,6 @@
 int main()
 {
 	Mtc mtc;
-	//SceneManager sceneManager; 
 		
 	mtc.setCallback(SceneManager::SceneFeiber);
 	mtc.run();

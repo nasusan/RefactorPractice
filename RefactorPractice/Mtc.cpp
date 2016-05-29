@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Mtc.h"
-#include "SceneManager.h"
 
 /**
  * Callback, called when the set.
