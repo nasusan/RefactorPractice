@@ -2,10 +2,12 @@
 //
 
 #include "stdafx.h"
-
+#include "Mtc.h"
 
 int main()
 {
+	Mtc::run();
+
     return 0;
 }
 
