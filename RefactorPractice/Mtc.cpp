@@ -2,33 +2,43 @@
 #include "Mtc.h"
 #include "SceneManager.h"
 
-namespace Mtc
+/**
+ * Callback, called when the set.
+ *
+ * @author	Code Geass
+ * @date	2016/05/29
+ *
+ * @param [in,out]	pfunc	If non-null, the pfunc.
+ */
+
+void Mtc::setCallback(void(*pfunc)(void))
 {
-	void (*MtcCoRoutine)() = nullptr;
+	_MtcCoRoutine = pfunc;
+}
 
-	void setCallback( void(*pfunc)(void) )
+/**
+ *	Mtcの本体
+ *	登録されているコルーチンを順に実行する
+ *
+ *	ここをStrategyかTemplateMethodで置き換えてないのが深い闇の元
+ *
+ * @author	Code Geass
+ * @date	2016/05/29
+ */
+
+void Mtc::run()
+{
+	if (_MtcCoRoutine == nullptr)
 	{
-		MtcCoRoutine = pfunc;
+		std::cout << "Mtc::run()" << std::endl;
+		std::cout << "					no coroutines." << std::endl;
+		return;
 	}
 
-	/**
-	 *	Mtcの本体
-	 *	登録されているコルーチンを順に実行する
-	 * 
-	 *	ここをStrategyかTemplateMethodで置き換えてないのが深い闇の元
-	 *
-	 * @author	Code Geass
-	 * @date	2016/05/29
-	 */
+	_MtcCoRoutine();
+}
 
-	void run()
-	{
-		if (MtcCoRoutine != nullptr)
-			MtcCoRoutine();
-	}
+void Mtc::wait()
+{
 
-	void wait()
-	{
-
-	}
 }

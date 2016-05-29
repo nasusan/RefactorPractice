@@ -3,11 +3,16 @@
 
 #include "stdafx.h"
 #include "Mtc.h"
+#include "SceneManager.h"
 
 int main()
 {
-	Mtc::run();
+	Mtc mtc;
+	//SceneManager sceneManager; 
+		
+	mtc.setCallback(SceneManager::SceneFeiber);
+	mtc.run();
 
-    return 0;
+	return 0;
 }
 

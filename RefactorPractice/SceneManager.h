@@ -2,8 +2,11 @@
 class SceneManager
 {
 public:
+
 	SceneManager();
 	~SceneManager();
+
+	static void SceneFeiber(void); 
 
 private:
 
@@ -22,4 +25,3 @@ private:
 };
 
 
-void SceneFeiber(void);

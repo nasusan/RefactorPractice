@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Mtc.h"
 
+
 /**
  * Default constructor.
  *
@@ -75,12 +76,14 @@ void SceneManager::ProcessCounter()
  * @date	2016/05/29
  */
 
-void SceneFeiber(void)
+void SceneManager::SceneFeiber(void)
 {
-	std::cout << "This is SeceFeiber()." << std::endl;
+	std::cout << "SceneFeiber is running....." << std::endl;
 
-	while (true)
-	{
-		Mtc::wait();
-	}
+	
+	//while (true)
+	//{
+	//	//‚±‚±‚ðFeiber‚Å‰ñ‚·
+	//	// Mtc::wait(1)	
+	//}
 }
