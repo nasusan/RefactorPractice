@@ -4,13 +4,15 @@
 #include "stdafx.h"
 #include "TaskController.h"
 #include "SceneManager.h"
+#include "RefactorPractice.h"
 
 int main()
 {
 	TaskController taskController;
-		
+
 	taskController.setCallback(SceneManager::SceneFeiber);
 	taskController.run();
+
 
 	return 0;
 }
